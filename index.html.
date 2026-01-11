@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Club Pigmento</title>
-<link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8">
+    <title>Club Pigmento</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
 
-  <h1>Club Pigmento</h1>
+    <form id="loginForm">
+        <h1>Club Pigmento</h1>
+        <h2>Ingreso de clientes</h2>
+        
+        <input type="number" id="dni" placeholder="DNI" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        
+        <button type="submit">Ingresar</button>
+        
+        <div id="resultado"></div>
+    </form>
 
-  <h2>Ingreso de clientes</h2>
-
-  <form id="loginForm">
-    <input type="number" id="dni" placeholder="DNI" required>
-    <input type="email" id="email" placeholder="Correo electrónico" required>
-    <button type="submit">Ingresar</button>
-  </form>
-
-  <div id="resultado"></div>
-
-  <!-- Conexión con JavaScript -->
-  <script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
