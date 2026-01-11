@@ -1,27 +1,33 @@
-/* CONFIGURACIÓN DEL FONDO PARA TODA LA PÁGINA */
+/* FONDO GLOBAL CON BRILLOS */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    /* Imagen de fragancias elegante y fija */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    font-family: 'Segoe UI', sans-serif;
+    /* Imagen de perfumes con destellos/brillos */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                 url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=1600');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Esto hace que el fondo se quede quieto al bajar */
+    background-attachment: fixed; /* Esto hace que los brillos se queden quietos al bajar */
     color: white;
 }
 
-/* PORTADA (HERO) - Ahora sin fondo propio para que se vea el del body */
+/* PORTADA CON TEXTO BRILLANTE */
 .hero {
     height: 60vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.hero h1 { font-size: 4rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+    /* Efecto de sombra para que el título resalte entre los brillos */
+    text-shadow: 0 0 15px rgba(233, 30, 99, 0.7), 2px 2px 5px rgba(0,0,0,0.8);
+}
 
 /* BOTÓN ROSA "UNIRME AHORA" */
 .btn-comenzar {
@@ -32,48 +38,50 @@ body {
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-    font-size: 1.1rem;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.5); /* Brillo alrededor del botón */
     transition: 0.3s;
 }
-.btn-comenzar:hover { background-color: #c2185b; transform: scale(1.05); }
 
-/* SECCIÓN DEL FORMULARIO */
+.btn-comenzar:hover {
+    transform: scale(1.05);
+    background-color: #ff2c7d;
+}
+
+/* TARJETA DE INGRESO SEMI-TRANSPARENTE */
 .main-container {
-    padding: 60px 20px;
+    padding: 50px 20px;
     display: flex;
     justify-content: center;
 }
 
-/* TARJETA DEL FORMULARIO - Un poco transparente para ver el fondo */
 #loginForm {
-    background-color: rgba(255, 255, 255, 0.9); /* Blanco con 90% de opacidad */
+    background-color: rgba(255, 255, 255, 0.92); /* Deja ver un poquito los brillos de fondo */
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 400px;
     text-align: center;
-    color: #333; /* Texto oscuro dentro del formulario para que se lea bien */
+    color: #333;
 }
 
-/* Inputs y botón de ingresar */
+/* Estilo de los botones e inputs internos */
 input {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
 button {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
     background-color: #e91e63;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: bold;
-    font-size: 1rem;
     cursor: pointer;
 }
