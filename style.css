@@ -1,65 +1,55 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Fondo general */
+/* Configuración Base */
 body {
-  background: linear-gradient(135deg, #f7c1cc, #f3e7e9);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    font-family: 'Playfair Display', serif; /* Una fuente más elegante */
+    margin: 0;
+    background-color: #fcfcfc;
 }
 
-/* Contenedor principal */
-.container {
-  background-color: #ffffff;
-  padding: 30px 40px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+/* PORTADA (Hero) */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1000');
+    background-size: cover;
+    background-position: center;
+    height: 60vh; /* Ocupa el 60% de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 
-/* Títulos */
-h1 {
-  text-align: center;
-  color: #b83280;
-  margin-bottom: 10px;
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
-h2 {
-  text-align: center;
-  color: #555;
-  margin-bottom: 20px;
-  font-size: 16px;
+.btn-comenzar {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #e91e63;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
-/* Formulario */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* Contenedor del Formulario */
+.main-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
 }
 
-/* Inputs */
-input {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+#loginForm {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
-input:focus {
-  outline: none;
-  border-color: #b83280;
-}
-
-/* Botón */
-button {
-  background-color: #b83280;
-  color: #f
+/* ... (Tus estilos anteriores de botones e inputs se mantienen) ... */
