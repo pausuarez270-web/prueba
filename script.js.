@@ -1,8 +1,0 @@
-document.getElementById('loginForm').onsubmit = function(event) {
-    event.preventDefault(); // Evita que la página se recargue
-    const dni = document.getElementById('dni').value;
-    const resultado = document.getElementById('resultado');
-    
-    resultado.innerHTML = <h3>¡Bienvenido, usuario ${dni}!</h3><p>Tu sistema de puntos está activo.</p>;
-    resultado.style.color = "#e91e63"; // Color rosa para el mensaje
-};
