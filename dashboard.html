@@ -43,20 +43,21 @@
         </div>
     </main>
    <script>
-     // 1. Configuramos los puntos
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. CONFIGURACIÓN DE PUNTOS
     const puntosCliente = 100000; 
     
-    // 2. Buscamos los elementos en el HTML
+    // 2. BUSCAR ELEMENTOS
     const textoRango = document.getElementById('rango-cliente');
     const barra = document.getElementById('barra-puntos');
     const mensaje = document.getElementById('mensaje-proximo-nivel');
     const puntosDisplay = document.querySelector('.puntos-numero');
 
-    // Mostramos los puntos en el círculo rojo
+    // Actualizar puntos en el círculo rojo
     if(puntosDisplay) puntosDisplay.innerText = puntosCliente.toLocaleString();
 
-    // 3. Lógica de niveles
-    if (textoRango) { // Solo si encontró el ID "rango-cliente"
+    // 3. LÓGICA DE NIVELES
+    if (textoRango) {
         if (puntosCliente >= 300000) {
             textoRango.innerText = "Eau de Parfum";
             textoRango.style.color = "#d4af37"; // Dorado
@@ -75,8 +76,6 @@
             if(mensaje) mensaje.innerText = Te faltan ${100000 - puntosCliente} puntos para Elixir;
             actualizarBarra(puntosCliente, 100000);
         }
-    } else {
-        console.error("No se encontró el elemento 'rango-cliente'. Revisa el ID en tu HTML.");
     }
 
     function actualizarBarra(puntos, meta) {
@@ -86,6 +85,7 @@
             if(barra) barra.style.width = porcentaje + "%";
         }, 500);
     }
-    </script> 
+});
+</script>
     </body>
 </html>
