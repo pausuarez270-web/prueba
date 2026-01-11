@@ -46,37 +46,34 @@
         </div>
     </main>
   <script>
-window.onload = function() {
-    // 1. CONFIGURACIÓN DE PUNTOS
+window.addEventListener('load', () => {
+    // 1. PUNTOS ACTUALES
     const puntosCliente = 100000; 
     
-    // 2. BUSCAR ELEMENTOS (Asegúrate que los IDs coincidan)
+    // 2. ELEMENTOS
     const textoRango = document.getElementById('rango-cliente');
     const barra = document.getElementById('barra-puntos');
     const mensaje = document.getElementById('mensaje-proximo-nivel');
     const puntosDisplay = document.querySelector('.puntos-numero');
 
-    // Mostramos los puntos en el círculo
     if(puntosDisplay) puntosDisplay.innerText = puntosCliente.toLocaleString();
 
-    // 3. LÓGICA DE NIVELES
+    // 3. LÓGICA DE NIVELES Y CONFETI
     if (textoRango) {
         if (puntosCliente >= 300000) {
             textoRango.innerText = "Eau de Parfum";
             textoRango.style.color = "#d4af37";
-            if(mensaje) mensaje.innerText = "¡Nivel máximo alcanzado!";
-            actualizarBarra(300000, 300000);lanzarConfetiDorado();
+            actualizarBarra(300000, 300000);
+            lanzarConfetiDorado(); // ¡Dispara confeti oro!
         } 
         else if (puntosCliente >= 100000) {
             textoRango.innerText = "Elixir";
             textoRango.style.color = "#e91e63";
-            if(mensaje) mensaje.innerText = Te faltan ${300000 - puntosCliente} puntos para Eau de Parfum;
-            actualizarBarra(puntosCliente, 300000);lanzarConfetiRosa();
+            actualizarBarra(puntosCliente, 300000);
+            lanzarConfetiRosa(); // ¡Dispara confeti rosa!
         } 
         else {
             textoRango.innerText = "Eau de Toilette";
-            textoRango.style.color = "#666";
-            if(mensaje) mensaje.innerText = Te faltan ${100000 - puntosCliente} puntos para Elixir;
             actualizarBarra(puntosCliente, 100000);
         }
     }
@@ -88,21 +85,22 @@ window.onload = function() {
             if(barra) barra.style.width = porcentaje + "%";
         }, 500);
     }
-};
- // --- FUNCIONES DE DISPARO ---
-    function lanzarConfetiRosa() {
-        confetti({
-            particleCount: 150, spread: 70, origin: { y: 0.6 },
-            colors: ['#e91e63', '#ff4081', '#ffffff']
-        });
-    }
+});
 
-    function lanzarConfetiDorado() {
-        confetti({
-            particleCount: 200, spread: 90, origin: { y: 0.6 },
-            colors: ['#d4af37', '#ffffff', '#fdf5e6']
-        });
-    }     
+// --- LAS FUNCIONES DE CONFETI (Fuera del evento load para orden) ---
+function lanzarConfetiRosa() {
+    confetti({
+        particleCount: 150, spread: 70, origin: { y: 0.6 },
+        colors: ['#e91e63', '#ff4081', '#ffffff']
+    });
+}
+
+function lanzarConfetiDorado() {
+    confetti({
+        particleCount: 200, spread: 90, origin: { y: 0.6 },
+        colors: ['#d4af37', '#ffffff', '#fdf5e6']
+    });
+}
 </script>
     </body>
 </html>
