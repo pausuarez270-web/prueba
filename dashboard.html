@@ -43,36 +43,49 @@
         </div>
     </main>
    <script>
-        // --- CONFIGURACIÓN DE PUNTOS ---
-        const puntosCliente = 1250; // Prueba con 150000 para ver el nivel Elixir
-        const metaProximoNivel = 100000;
-        
-        const textoRango = document.getElementById('rango-cliente');
-        const barra = document.getElementById('barra-puntos');
-        const mensaje = document.getElementById('mensaje-proximo-nivel');
+       // --- AQUÍ CAMBIAS LOS PUNTOS PARA PROBAR ---
+    const puntosCliente = 100000; // Si pones 100000 dirá Elixir. Si pones 300000 dirá Eau de Parfum.
+    
+    const textoRango = document.getElementById('rango-cliente');
+    const barra = document.getElementById('barra-puntos');
+    const mensaje = document.getElementById('mensaje-proximo-nivel');
+    const puntosDisplay = document.querySelector('.puntos-numero');
 
-        // 1. Lógica de Niveles
-        if (puntosCliente >= 300000) {
-            textoRango.innerText = "Eau de Parfum";
-            textoRango.style.color = "#d4af37"; 
-            mensaje.innerText = "¡Nivel máximo alcanzado!";
-        } else if (puntosCliente >= 100000) {
-            textoRango.innerText = "Elixir";
-            textoRango.style.color = "#e91e63"; 
-            mensaje.innerText = "¡Estás cerca del nivel Eau de Parfum!";
-        } else {
-            textoRango.innerText = "Eau de Toilette";
-            mensaje.innerText = Te faltan ${metaProximoNivel - puntosCliente} puntos para ser Elixir;
-        }
+    // Actualizamos el número grande de puntos en la pantalla
+    if(puntosDisplay) puntosDisplay.innerText = puntosCliente.toLocaleString();
 
-        // 2. Lógica de la Barra de Progreso
-        let porcentaje = (puntosCliente / metaProximoNivel) * 100;
+    // --- LÓGICA DE NIVELES (TUS REGLAS) ---
+    if (puntosCliente >= 300000) {
+        // NIVEL MÁXIMO
+        textoRango.innerText = "Eau de Parfum";
+        textoRango.style.color = "#d4af37"; // Dorado
+        mensaje.innerText = "¡Has alcanzado la distinción máxima!";
+        actualizarBarra(300000, 300000); // Barra llena
+    } 
+    else if (puntosCliente >= 100000) {
+        // NIVEL ELIXIR
+        textoRango.innerText = "Elixir";
+        textoRango.style.color = "#e91e63"; // Rosa
+        mensaje.innerText = Te faltan ${300000 - puntosCliente} puntos para Eau de Parfum;
+        actualizarBarra(puntosCliente, 300000); // Progreso hacia 300k
+    } 
+    else {
+        // NIVEL INICIAL
+        textoRango.innerText = "Eau de Toilette";
+        textoRango.style.color = "#666";
+        mensaje.innerText = Te faltan ${100000 - puntosCliente} puntos para Elixir;
+        actualizarBarra(puntosCliente, 100000); // Progreso hacia 100k
+    }
+
+    // Función para que la barra se mueva
+    function actualizarBarra(puntos, meta) {
+        let porcentaje = (puntos / meta) * 100;
         if (porcentaje > 100) porcentaje = 100;
         
-        // Animación de la barra
         setTimeout(() => {
             if(barra) barra.style.width = porcentaje + "%";
         }, 500);
+    }  
     </script> 
     </body>
 </html>
