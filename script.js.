@@ -1,47 +1,8 @@
-// Esperamos a que el HTML cargue
-document.addEventListener("DOMContentLoaded", () => {
-
-  const form = document.getElementById("loginForm");
-  const resultado = document.getElementById("resultado");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // evita recargar la página
-
-    // Tomamos los valores del formulario
-    const dni = document.getElementById("dni").value;
-    const email = document.getElementById("email").value;
-
-    // Validación simple
-    if (dni === "" || email === "") {
-      resultado.innerHTML = "<p>Completá todos los campos</p>";
-      return;
-    }
-
-    // Enviamos los datos al backend
-    fetch("http://localhost:5000/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        dni: dni,
-        email: email
-      })
-    })
-      .then(response => response.json())
-      .then(data => {
-        // Mostramos los datos en pantalla
-        resultado.innerHTML = `
-          <h3>¡Bienvenido/a al Club Pigmento!</h3>
-          <p><strong>DNI:</strong> ${data.dni}</p>
-          <p><strong>Puntos acumulados:</strong> ${data.puntos}</p>
-        `;
-      })
-      .catch(error => {
-        console.error(error);
-        resultado.innerHTML =
-          "<p>Error al conectar con el servidor</p>";
-      });
-  });
-
-});
+document.getElementById('loginForm').onsubmit = function(event) {
+    event.preventDefault(); // Evita que la página se recargue
+    const dni = document.getElementById('dni').value;
+    const resultado = document.getElementById('resultado');
+    
+    resultado.innerHTML = <h3>¡Bienvenido, usuario ${dni}!</h3><p>Tu sistema de puntos está activo.</p>;
+    resultado.style.color = "#e91e63"; // Color rosa para el mensaje
+};
