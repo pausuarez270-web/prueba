@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Panel - Club Pigmento</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -63,13 +65,13 @@ window.onload = function() {
             textoRango.innerText = "Eau de Parfum";
             textoRango.style.color = "#d4af37";
             if(mensaje) mensaje.innerText = "¡Nivel máximo alcanzado!";
-            actualizarBarra(300000, 300000);
+            actualizarBarra(300000, 300000);lanzarConfetiDorado();
         } 
         else if (puntosCliente >= 100000) {
             textoRango.innerText = "Elixir";
             textoRango.style.color = "#e91e63";
             if(mensaje) mensaje.innerText = Te faltan ${300000 - puntosCliente} puntos para Eau de Parfum;
-            actualizarBarra(puntosCliente, 300000);
+            actualizarBarra(puntosCliente, 300000);lanzarConfetiRosa();
         } 
         else {
             textoRango.innerText = "Eau de Toilette";
@@ -87,6 +89,20 @@ window.onload = function() {
         }, 500);
     }
 };
+ // --- FUNCIONES DE DISPARO ---
+    function lanzarConfetiRosa() {
+        confetti({
+            particleCount: 150, spread: 70, origin: { y: 0.6 },
+            colors: ['#e91e63', '#ff4081', '#ffffff']
+        });
+    }
+
+    function lanzarConfetiDorado() {
+        confetti({
+            particleCount: 200, spread: 90, origin: { y: 0.6 },
+            colors: ['#d4af37', '#ffffff', '#fdf5e6']
+        });
+    }     
 </script>
     </body>
 </html>
