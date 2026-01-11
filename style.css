@@ -1,18 +1,10 @@
-/* Configuración General */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-/* PORTADA (Hero Section) */
+/* --- CONFIGURACIÓN DE LA PORTADA (HERO) --- */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1000');
     background-size: cover;
     background-position: center;
-    height: 50vh; /* Ocupa la mitad de la pantalla */
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,72 +12,62 @@ body {
     color: white;
 }
 
-.hero h1 { font-size: 3rem; margin: 0; }
-.hero p { font-size: 1.2rem; }
-
-/* CONTENEDOR DEL FORMULARIO (Igual al anterior) */
-.main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
+/* AQUÍ HACEMOS EL BOTÓN ROSA */
+.btn-comenzar {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #e91e63; /* Rosa Pigmento */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
+.btn-comenzar:hover {
+    background-color: #c2185b;
+    transform: scale(1.05); /* Se agranda un poquito al tocarlo */
+}
+
+/* --- SECCIÓN DE INGRESO CON IMAGEN DE FONDO --- */
+.main-container {
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=1000');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* La tarjeta blanca se mantiene para que el texto se lea bien */
 #loginForm {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
     text-align: center;
 }
 
-/* Estilo de los textos dentro del formulario */
-#loginForm h2 {
-    font-size: 22px;
-    color: #444;
-    margin-bottom: 25px;
-}
-
-/* Inputs (DNI y Correo) */
+/* Estilo de los inputs y el botón de ingresar (lo que ya tenías) */
 input {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
     margin: 10px 0;
     border: 1px solid #ddd;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 16px;
+    border-radius: 8px;
 }
 
-input:focus {
-    border-color: #e91e63;
-    outline: none;
-}
-
-/* BOTÓN ROSA (El que te gustó) */
 button {
     width: 100%;
-    padding: 14px;
-    background-color: #e91e63; /* Rosa fuerte de perfumería */
+    padding: 12px;
+    background-color: #e91e63;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
-}
-
-button:hover {
-    background-color: #c2185b; /* Un rosa más oscuro al pasar el mouse */
-}
-
-/* Mensaje de bienvenida */
-#resultado {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #e91e63;
 }
