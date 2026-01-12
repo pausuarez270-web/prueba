@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promos Bancarias - Club Pigmento</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .grid-bancos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .banco-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        .dia-tag {
+            display: inline-block;
+            background: #e91e63;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <span class="logo">Club Pigmento</span>
+        <a href="dashboard.html" class="btn-salir">Volver al Panel</a>
+    </nav>
+
+    <main class="dashboard-container">
+        <h1 style="text-align: center; margin-bottom: 10px;">Beneficios Bancarios</h1>
+        <p style="text-align: center;">Aprovechá estas promos exclusivas de la semana.</p>
+
+        <div class="grid-bancos">
+            <div class="banco-card">
+                <span class="dia-tag">Lunes y Martes</span>
+                <h3>Tarjeta 365 Plus</h3>
+                <p><strong>10% OFF</strong> en toda tu compra.</p>
+                <small>* Solo productos sin descuento previo.</small>
+                <p style="margin-top:10px; font-size: 0.8rem; color: #ccc;">Resto de la semana: Solo fragancias y cosmética.</p>
+            </div>
+
+            <div class="banco-card">
+                <span class="dia-tag">Miércoles</span>
+                <h3>Santander Río</h3>
+                <p><strong>10% de ahorro</strong></p>
+                <p>6 cuotas sin interés</p>
+                <small>Exclusivo pagando desde la App del Banco.</small>
+            </div>
+
+            <div class="banco-card">
+                <span class="dia-tag">Jueves y Viernes</span>
+                <h3>Banco Provincia</h3>
+                <p><strong>4 cuotas sin interés</strong></p>
+                <p>En toda tu compra.</p>
+                <small>Válido con tarjeta física.</small>
+            </div>
+
+            <div class="banco-card">
+                <span class="dia-tag">Viernes y Sábado</span>
+                <h3>Banco Nación</h3>
+                <p><strong>12 cuotas sin interés</strong></p>
+                <p>En toda tu compra.</p>
+                <small>Pagando con App MODO.</small>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
