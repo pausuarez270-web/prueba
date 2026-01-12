@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promos Bancarias - Club Pigmento</title>
     <link rel="stylesheet" href="style.css">
-     <style>
+    <style>
     body {
-        /* si va.png */
-        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+        /* Usamos el nombre exacto de tu archivo subido */
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                     url('1000377497.jpg') !important;
         background-size: cover !important;
         background-position: center !important;
@@ -16,7 +16,24 @@
         min-height: 100vh;
         margin: 0;
         color: white;
-        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Esto hace que el cuadradito blanco se vea bien */
+    .logo-box {
+        background: white;
+        padding: 10px;
+        border-radius: 12px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .logo-box img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
     }
 </style>
 </head>
