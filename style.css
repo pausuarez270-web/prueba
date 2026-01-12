@@ -127,15 +127,6 @@ button {
     gap: 20px;
     margin-top: 20px;
 }
-
-.card-beneficio {
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid white;
-    padding: 20px;
-    border-radius: 15px;
-    backdrop-filter: blur(5px); /* Efecto de vidrio empañado */
-}
-
 .btn-salir {
     color: white;
     text-decoration: none;
@@ -168,4 +159,43 @@ button {
     font-size: 0.9rem;
     margin: 0;
     line-height: 1.4;
+}
+/* --- DISEÑO DE GRILLA PARA 3 COLUMNAS --- */
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Esto los pone uno al lado del otro */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-beneficio {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    color: white;
+}
+
+.card-beneficio:hover {
+    transform: translateY(-10px); /* Efecto de levante */
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card-beneficio h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.card-beneficio p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
 }
