@@ -6,29 +6,55 @@
     <title>Promos Bancarias - Club Pigmento</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Fondo único para esta página */
+        body {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%) !important;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: white;
+        }
+
         .grid-bancos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            margin-top: 30px;
+            padding: 20px;
         }
+
         .banco-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
+        /* Contenedor blanco para que el logo resalte */
+        .logo-box {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-box img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
         .dia-tag {
             display: inline-block;
-            background: #e91e63;
-            color: white;
-            padding: 5px 12px;
+            padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
             font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -37,39 +63,48 @@
         <span class="logo">Club Pigmento</span>
         <a href="dashboard.html" class="btn-salir">Volver al Panel</a>
     </nav>
- <main class="dashboard-container">
-        <h1 style="text-align: center; margin-bottom: 10px;">Beneficios Bancarios</h1>
-        <p style="text-align: center;">Aprovechá estas promos exclusivas de la semana.</p>
-<div class="grid-bancos">
-    <div class="banco-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Logo_365.png" alt="Logo 365" class="banco-logo">
-        <span class="dia-tag">Lunes y Martes</span>
-        <h3>10% OFF</h3>
-        <p>En toda tu compra (productos sin descuento).</p>
-        <small>Resto de la semana: Fragancias y cosmética.</small>
-    </div>
 
-    <div class="banco-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Santander_Logotipo.svg/2560px-Santander_Logotipo.svg.png" alt="Logo Santander" class="banco-logo">
-        <span class="dia-tag">Miércoles</span>
-        <h3>10% Ahorro</h3>
-        <p>6 cuotas sin interés pagando desde la App.</p>
-    </div>
+    <div class="dashboard-container">
+        <h1 style="text-align: center; margin-top: 20px;">Beneficios Bancarios</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Aprovechá estas promos exclusivas de la semana.</p>
 
-    <div class="banco-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Banco_Provincia.svg/1200px-Banco_Provincia.svg.png" alt="Logo Provincia" class="banco-logo">
-        <span class="dia-tag">Jueves y Viernes</span>
-        <h3>4 Cuotas Sin Interés</h3>
-        <p>Válido en toda la compra con tarjeta física.</p>
-    </div>
+        <div class="grid-bancos">
+            <div class="banco-card">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_365.png/1200px-Logo_365.png" alt="365">
+                </div>
+                <span class="dia-tag" style="background: #000;">Lunes y Martes</span>
+                <h3>10% OFF</h3>
+                <p>En toda la compra (productos sin descuento).</p>
+            </div>
 
-    <div class="banco-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Logo-Modo-Vertical.png/1200px-Logo-Modo-Vertical.png" alt="Logo MODO" class="banco-logo">
-        <span class="dia-tag">Viernes y Sábado</span>
-        <h3>12 Cuotas Sin Interés</h3>
-        <p>Toda la compra exclusivamente con App MODO.</p>
+            <div class="banco-card">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Santander_Logotipo.svg/2560px-Santander_Logotipo.svg.png" alt="Santander">
+                </div>
+                <span class="dia-tag" style="background: #ec0000;">Miércoles</span>
+                <h3>10% Ahorro</h3>
+                <p>6 cuotas sin interés desde la App del banco.</p>
+            </div>
+
+            <div class="banco-card">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Banco_Provincia.svg/1200px-Banco_Provincia.svg.png" alt="Provincia">
+                </div>
+                <span class="dia-tag" style="background: #00a13a;">Jueves y Viernes</span>
+                <h3>4 Cuotas Sin Interés</h3>
+                <p>Toda la compra con tarjeta física.</p>
+            </div>
+
+            <div class="banco-card">
+                <div class="logo-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Logo-Modo-Vertical.png/1200px-Logo-Modo-Vertical.png" alt="MODO">
+                </div>
+                <span class="dia-tag" style="background: #a1ed00; color: #000;">Viernes y Sábado</span>
+                <h3>12 Cuotas Sin Interés</h3>
+                <p>Toda la compra con App MODO.</p>
+            </div>
+        </div>
     </div>
-</div>
-    </main>
 </body>
 </html>
