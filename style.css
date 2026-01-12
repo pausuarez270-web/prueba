@@ -1,17 +1,3 @@
-/* FONDO GLOBAL CON BRILLOS */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    /* Imagen de perfumes con destellos/brillos */
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=1600');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Esto hace que los brillos se queden quietos al bajar */
-    color: white;
-}
-
 /* PORTADA CON TEXTO BRILLANTE */
 .hero {
     height: 60vh;
@@ -199,13 +185,7 @@ button {
     line-height: 1.5;
     opacity: 0.9;
 }
-body {
-    /* Un fondo degradado oscuro que resalta los logos */
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    min-height: 100vh;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+
 .banco-logo {
     height: 50px;       /* Altura fija para que todos se vean iguales */
     width: auto;        /* Mantiene la proporción */
