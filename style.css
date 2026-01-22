@@ -1,4 +1,15 @@
 /* PORTADA CON TEXTO BRILLANTE */
+/* 1. ESTILOS GLOBALES AL PRINCIPIO */
+body {
+    background-image: url('Fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+}
 .hero {
     height: 60vh;
     display: flex;
@@ -197,21 +208,4 @@ button {
     transform: scale(1.05);
     background: rgba(255, 255, 255, 0.12);
 }
-body {
-    /* Carga la imagen de fondo */
-    background-image: url('si va.png');
-    
-    /* Asegura que la imagen cubra toda la pantalla sin repetirse */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
 
-    /* Color de respaldo por si la imagen no carga */
-    background-color: #121212; 
-    
-    /* Color de texto base para que se lea sobre el fondo */
-    color: white;
-    margin: 0;
-    min-height: 100vh;
-}
